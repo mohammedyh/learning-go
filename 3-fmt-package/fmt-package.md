@@ -109,12 +109,49 @@ fmt.Scan(&response)
 fmt.Printf("I'm %v.", response)
 ```
 
-First, "How are you doing?" is printed to the terminal. Then we declare a variable, `response` with the type `string`. `fmt.Scan(&response)` takes the first value before a space and stores it in response. In the terminal, we would see:
+The `Scan()` function scans text, read from stdin, and stores space-separated values in separate arguments. The above code only saves the first space separated value. To save more, you need to declare those variables like shown below:
 
-`How are you doing?`
+```go
+fmt.Println("How are you doing?")
 
-The `Scan()` function scans text and stores space separated values. The above code snippet would only save the first space separated value. If you need to save more, you need to declare those variables.
+var response1, response2 string
 
-`Scan()` expects _addresses_ / _memory locations_ for arguments, which is what the `&` does.
+fmt.Scan(&response1)
+fmt.Scan(&response2)
 
-> Note: Doing `fmt.Println(&response)`
+fmt.Printf("I'm %v %v, thanks for asking\n", response1, response2)
+
+// Output: How are you doing?
+// Input: very well
+// Output: I'm very well, thanks for asking
+```
+
+An interesting point about the above code is that, although there are two `Scan()` lines, if you enter 2 (space-separated) values on a single line, and press Enter, `Scan()` understands that as 2 arguments, and then terminates the scanning.
+
+If you want to accept multiple arguments, it's more common to write it like so:
+
+```go
+fmt.Scan(&response1, &response2)
+```
+
+`Scan()` expects memory _addresses_ / _locations_ for arguments, which is what the `&` does.
+
+> Note: Doing `fmt.Println(&response)` returns the memory address for the `response` variable. Example: 0x1400008e050
+
+`Print()` and `Sprint()`:
+- Uses default formatting
+- Puts spaces between arguments that **are not** strings
+- Doesn't append a newline
+
+`Printf()` and `Sprintf()`
+- Accepts a format specifier string as first argument.
+- Doesn't append a newline
+
+`Println()` and `Sprintln()`
+- Uses default formatting
+- Put spaces between all arguments
+- Does append a newline
+
+`Print` functions return the number of bytes written and any write error.
+
+`Sprint` functions returns the resulting, formatted string.
