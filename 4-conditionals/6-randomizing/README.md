@@ -5,7 +5,7 @@ Previously, hard coded values (values that don’t change) were used for variabl
 ```go
 alarmRinging := true
 if alarmRinging {
-    fmt.Println("Turn off the alarm!!")
+  fmt.Println("Turn off the alarm!!")
 }
 ```
 

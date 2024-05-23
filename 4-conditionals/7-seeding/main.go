@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"time"
 )
 
 func main() {
@@ -11,11 +12,10 @@ func main() {
 	// autoseeding introduced as of Go 1.20
 	os.Setenv("GODEBUG", "randautoseed=0")
 
+	rand.Seed(time.Now().UnixNano())
 	amountLeft := rand.Intn(10000)
-	amountLeft2 := rand.Intn(10000)
 
 	fmt.Println("amountLeft is: ", amountLeft)
-	fmt.Println("amountLeft2 is: ", amountLeft2)
 
 	if amountLeft > 5000 {
 		fmt.Println("What should I spend this on?")
