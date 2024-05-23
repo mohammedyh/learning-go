@@ -1,6 +1,6 @@
 # Getting User Input
 
-The `Scan()` method allows us to get user input.
+The `Scan()` function allows us to get user input.
 
 The `Scan()` function scans text, read from stdin, and stores space-separated values in separate arguments. The code in the "single argument" example only saves the first space separated value. To save more, you need to declare those variables like shown in the "multiple arguments" example.
 

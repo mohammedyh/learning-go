@@ -1,4 +1,4 @@
-# The `Sprintf` Method
+# The `Sprintf` Function
 
 `Sprintf()` allows us to interpolate a string like `Printf()`, but without printing it.
 
