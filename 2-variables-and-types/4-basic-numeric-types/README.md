@@ -12,4 +12,4 @@ Integers can be either signed or unsigned. Signed can be negative, while unsigne
 
 Go also has a boolean type which only needs 1 bit to store a value: 0 represents `false` and 1 represents `true`.
 
-![Go's numeric types outlined in a table.](./images/go-numeric-types.svg)
+![Go's numeric types outlined in a table.](../images/go-numeric-types.svg)
