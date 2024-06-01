@@ -1,6 +1,6 @@
 # Classic For Loop
 
-Loop allow us to check a condition and repeat code a fixed number ot times.
+Loop allow us to check a condition and repeat code a fixed number of times.
 
 While an if statement only has a conditional expression (like `number < 5`), a definite loop has two additional components:
 
