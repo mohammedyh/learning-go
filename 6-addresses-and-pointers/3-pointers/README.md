@@ -22,3 +22,5 @@ pointerForInt = &minutes
 fmt.Println(pointerForInt)
 // Output: 0xc000018038
 ```
+
+> It's worth noting that a pointer's zero value is `nil`
