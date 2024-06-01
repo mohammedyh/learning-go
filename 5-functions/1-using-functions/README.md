@@ -13,7 +13,7 @@ func main() {
   }
 
   fmt.Println(addNums(2, 2))
-  // Output: result: 4
+  // Output: 4
 }
 ```
 

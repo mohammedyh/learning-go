@@ -10,5 +10,6 @@ func startGame() {
 
 func main() {
 	startGame()
-	// fmt.Println(instructions) // Output: undefined: instructions
+	// fmt.Println(instructions)
+	// Output: undefined: instructions
 }

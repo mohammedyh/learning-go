@@ -18,7 +18,6 @@ func getLengthOfCentralPark() int32 {
 func main() {
   centralParkLength := getLengthOfCentralPark()
   fmt.Println(centralParkLength)
-  // Output
-  : 51
+  // Output: 51
 }
 ```
