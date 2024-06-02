@@ -10,21 +10,24 @@ import (
 func main() {
 	fmt.Printf("Enter your birth year: ")
 
-	var year string
+	var userYear string
+	const PURPLE = "\033[35m"
+	const NOCOLOR = "\033[0m"
 
-	fmt.Scan(&year)
+	fmt.Scan(&userYear)
 
-	yearAsInt, err := strconv.ParseInt(year, 10, 16)
+	userYearInt, err := strconv.ParseInt(userYear, 10, 16)
+	currentYear := time.Now().Year()
 
 	if err != nil {
-		log.Fatal(err.Error())
+		log.Fatalf("%v%v%v", PURPLE, err.Error(), NOCOLOR)
 	}
 
-	if int(yearAsInt) > time.Now().Year() {
-		log.Fatal("The birth year cannot be in the future")
+	if int(userYearInt) > currentYear {
+		log.Fatalf("%vThe birth year cannot be in the future%v", PURPLE, NOCOLOR)
 	}
 
-	age := time.Now().Year() - int(yearAsInt)
+	age := currentYear - int(userYearInt)
 
-	fmt.Printf("You will be %v years old this year\n", age)
+	fmt.Printf("%vYou will be %v years old this year%v\n", PURPLE, age, NOCOLOR)
 }
